@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: app2
-        image: shailaja117/app2:1.0.0
+        image: shailaja117/app2:1.1.0
         ports:
         - containerPort: 80
 ---
