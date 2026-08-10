@@ -31,7 +31,7 @@ spec:
   ports:
   - protocol: TCP
     port: 80 # service port
-    targetPort: 80
+    targetPort: 8080
 ...
 apiVersion: networking.k8s.io/v1
 kind: Ingress
@@ -42,7 +42,7 @@ metadata:
     alb.ingress.kubernetes.io/target-type: ip
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS": 443}]'
     alb.ingress.kubernetes.io/certificate-arn: arn:aws:acm:us-east-1:234351470564:certificate/c96393c7-18d4-46a7-ba47-39913669644f
-    alb.ingress.kubernetes.io/group.name: joindevops
+    alb.ingress.kubernetes.io/group.name: enjam
 spec:
   ingressClassName: alb
   rules:
@@ -55,4 +55,4 @@ spec:
           service:
             name: app1
             port:
-              number: 80
+              number: 8080
